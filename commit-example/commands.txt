@@ -1,0 +1,11 @@
+docker run -it --name ubuntu-vim ubuntu:20.04 bash
+
+apt update;apt install vim -y 
+
+vim /root/example-text.txt
+
+docker commit ubuntu-vim ubuntu-vim
+
+docker container prune -f
+
+docker run ubuntu-vim bash -c "vim --version; cat /root/example-text.txt"
