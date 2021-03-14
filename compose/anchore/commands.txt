@@ -26,3 +26,6 @@ docker cp express/Dockerfile anchore_api_1:/Dockerfile
 
 compose exec api anchore-cli image add carlosmartinruiz/ubuntu-node --dockerfile=/Dockerfile --force
 
+compose exec api anchore-cli image add carlosmartinruiz/express-ubuntu
+compose exec api anchore-cli image vuln carlosmartinruiz/express-ubuntu all
+
